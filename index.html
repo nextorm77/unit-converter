@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>단위 변환기</title>
+    <!-- CSS 파일 연결 -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="converter-card">
+        <h2>단위 변환기</h2>
+        
+        <!-- 카테고리 선택 -->
+        <div class="form-group">
+            <label for="category">변환 종류</label>
+            <select id="category">
+                <option value="length">길이 (Length)</option>
+                <option value="weight">무게 (Weight)</option>
+            </select>
+        </div>
+        
+        <!-- 입력 부분 -->
+        <div class="form-group">
+            <label>입력 값</label>
+            <div class="input-group">
+                <input type="number" id="inputValue" placeholder="값을 입력하세요">
+                <select id="inputUnit"></select>
+            </div>
+        </div>
+        
+        <!-- 결과 부분 -->
+        <div class="form-group">
+            <label>변환 결과</label>
+            <div class="input-group">
+                <input type="number" id="outputValue" placeholder="결과" readonly>
+                <select id="outputUnit"></select>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript 파일 연결 -->
+    <script src="script.js"></script>
+</body>
+</html>
