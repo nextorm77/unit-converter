@@ -6,6 +6,7 @@ const inputValue = document.getElementById('inputValue');
 const outputValue = document.getElementById('outputValue');
 
 // 기준 단위를 1로 잡았을 때의 각 단위별 비율
+// 길이는 1m, 무게는 1kg, 넓이는 1㎡ 가 기준(1)입니다.
 const unitsData = {
     length: {
         'm': 1,
@@ -19,16 +20,28 @@ const unitsData = {
         'g': 1000,
         'lb': 2.20462,
         'oz': 35.274
+    },
+    area: {
+        'm2': 1,
+        'pyung': 0.3025,      // 1㎡ = 약 0.3025평
+        'km2': 0.000001,
+        'ft2': 10.7639,
+        'ha': 0.0001,
+        'ac': 0.000247105
     }
 };
 
 // 화면에 표시될 단위의 이름
 const unitLabels = {
+    // 길이
     'm': '미터 (m)', 'cm': '센티미터 (cm)', 'km': '킬로미터 (km)', 'inch': '인치 (in)', 'ft': '피트 (ft)',
-    'kg': '킬로그램 (kg)', 'g': '그램 (g)', 'lb': '파운드 (lb)', 'oz': '온스 (oz)'
+    // 무게
+    'kg': '킬로그램 (kg)', 'g': '그램 (g)', 'lb': '파운드 (lb)', 'oz': '온스 (oz)',
+    // 넓이
+    'm2': '제곱미터 (㎡)', 'pyung': '평 (평)', 'km2': '제곱킬로미터 (㎢)', 'ft2': '제곱피트 (sq ft)', 'ha': '헥타르 (ha)', 'ac': '에이커 (ac)'
 };
 
-// 카테고리(길이/무게) 변경 시 Select 박스 옵션 업데이트
+// 카테고리(길이/무게/넓이) 변경 시 Select 박스 옵션 업데이트
 function updateUnits() {
     const category = categorySelect.value;
 
